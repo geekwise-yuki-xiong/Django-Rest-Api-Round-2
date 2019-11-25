@@ -24,5 +24,7 @@ router.register(r'bank/product', bank_views.ProductViewSet)
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include(router.urls)),
-    path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))
+    path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+    path('bank/branch/create', bank_views.branch_create, name='branch_create'),
+    path('bank/branch/read', bank_views.branch_read, name='branch_read'),
 ]
