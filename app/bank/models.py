@@ -1,5 +1,6 @@
 from django.db import models
 
+
 class Branch(models.Model):
     class Meta:
         verbose_name_plural = 'branches'
