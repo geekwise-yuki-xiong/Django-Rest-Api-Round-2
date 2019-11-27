@@ -23,6 +23,7 @@ class ProductInline(admin.StackedInline):
 @admin.register(Branch)
 class AccountAdmin(admin.ModelAdmin):
     inlines = [
+        CustomerInline,
         AccountInline,
     ]
 

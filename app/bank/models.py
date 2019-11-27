@@ -11,6 +11,12 @@ class Branch(models.Model):
         return(f"{self.bank}")
 
 class Customer(models.Model):
+    bank_partner = models.ForeignKey(
+        Branch,
+        on_delete=models.CASCADE,
+        related_name='customer_bank_partner',
+    )
+
     name = models.CharField(max_length=300)
     email = models.EmailField(max_length=300)
     phone = models.CharField(max_length=300)
@@ -23,7 +29,7 @@ class Account(models.Model):
     bank_partner = models.ForeignKey(
         Branch,
         on_delete=models.CASCADE,
-        related_name='bank_partner',
+        related_name='account_bank_partner',
     )
     holder = models.OneToOneField(
         Customer,
